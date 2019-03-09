@@ -3,6 +3,7 @@
 //  TestMP3
 //
 //  Created by user on 1/22/19.
+//  ViewController
 //  Copyright © 2019 Home Work Student. All rights reserved.
 //
 
@@ -17,6 +18,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate{/*, Table
     func didSelectColor( text: String) {
         print("Did Send Text: \(text)")
         labelText.text = text
+     hiden function
     }
 */
     
