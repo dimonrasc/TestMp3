@@ -42,13 +42,15 @@ class TableViewController: UITableViewController {
     func fileManag(path : String){
         let filemgr = FileManager.default
         dirPaths = filemgr.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        //********************source
         //let myDocumentsDirectory = dirPaths[0].appendingPathComponent("2018 - MARUV - Black Water")
         let myDocumentsDirectory = dirPaths[0].appendingPathComponent(path)
+        
         globalCurrrentFolder = myDocumentsDirectory.path
         print(myDocumentsDirectory)
         
         do {
-            //let directoryContents = try FileManager.default.contentsOfDirectory(at: myDocumentsDirectory, includingPropertiesForKeys: nil, options: [])
             let directoryContents = try FileManager.default.contentsOfDirectory(at: myDocumentsDirectory, includingPropertiesForKeys: nil, options: [])
             
             let onlyFileNames = directoryContents.filter{ !$0.hasDirectoryPath }

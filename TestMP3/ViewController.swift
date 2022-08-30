@@ -82,7 +82,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate{/*, Table
                 try AVAudioSession.sharedInstance().setActive(true)
                 
                 /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+                //player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+                //player = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "maruv", ofType: AVFileType.mp3.rawValue)!))
+                player = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "maruv", ofType: "mp3")!))
                 player.prepareToPlay()
                 labelNameFiletoPlay.text = globalSelectedFileToPlay
                 player.play()
@@ -90,6 +92,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate{/*, Table
                 rotationTitleAlbum()
             } catch let error {
                 print(error.localizedDescription)
+                //print(error)
             }  
         }
         return
